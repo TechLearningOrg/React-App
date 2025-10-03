@@ -43,5 +43,4 @@ jobs:
         run: |
           docker run -d --name my-app -p 3000:3000 prince0127/react:latest
 
-            # Run new container
-            docker run -d -p 3000:3000 --name react-app prince0127/react-app:latest
+          
