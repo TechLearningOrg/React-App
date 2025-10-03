@@ -35,10 +35,12 @@ jobs:
 
       - name: Stop and remove old container (if exists)
         run: |
-          if [ $(docker ps -aq -f name=my-app) ]; then
-            docker stop my-app
-            docker rm my-app
+          CONTAINER=$(docker ps -aq -f name=my-app)
+          if [ -n "$CONTAINER" ]; then
+          docker stop my-app
+          docker rm my-app
           fi
+
 
       - name: Run Docker container
         run: |
