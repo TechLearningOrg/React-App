@@ -24,7 +24,6 @@ jobs:
     
       - name: Build Docker image
         run: |
-          cd src
           docker build -t prince0127/react-app:latest .
 
       - name: Push Docker image
