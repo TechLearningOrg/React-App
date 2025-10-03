@@ -22,9 +22,12 @@ jobs:
           password: "Docker@27."
 
     
-      - name: Build Docker image
-        run: |
-          docker build -t prince0127/react-app:latest .
+      - name: Build React Docker image
+        run: docker build -t my-app .
+
+      - name: Run React container
+        run: docker run -d --name my-app -p 3000:3000 my-app
+
 
       - name: Push Docker image
         run: |
